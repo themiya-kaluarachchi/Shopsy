@@ -53,16 +53,15 @@ const DropdownLinks = [
 
 
 
-function Navbar() {
+function Navbar({ handleOrderPopup }) {
   return (
-    <div className='shadow-md bg-white dark:bg-gray-900 
-        dark:text-white duration-200 relative z-40'>
+    <div className='relative z-40 duration-200 bg-white shadow-md dark:bg-gray-900 dark:text-white'>
         {/* upper Navbar */}
-        <div className='bg-primary/40 py-2'>
-            <div className='container flex justify-between items-center'>
+        <div className='py-2 bg-primary/40'>
+            <div className='container flex items-center justify-between'>
                 <div>
                     <a href="#"
-                        className='font-bold text-2xl sm:text-3xl flex gap-2'
+                        className='flex gap-2 text-2xl font-bold sm:text-3xl'
                     >
                         <img src={Logo} alt="Logo"
                             className='w-10'
@@ -72,10 +71,10 @@ function Navbar() {
                 </div>
 
                 { /* search bar , order button and darkmode button */}
-                <div className='flex justify-between items-center gap-4'>
+                <div className='flex items-center justify-between gap-4'>
                     
                     {/* search bar */}
-                    <div className='relative group hidden sm:block'>
+                    <div className='relative hidden group sm:block'>
                        <input 
                             type="text"
                             placeholder='search'
@@ -89,24 +88,21 @@ function Navbar() {
                             dark:bg-gray-800' 
                         />
                         <IoMdSearch
-                            className='text-gray-500
-                            group-hover:text-primary
-                            absolute top-1/2 -translate-y-1/2 right-3'
+                            className='absolute text-gray-500 -translate-y-1/2 group-hover:text-primary top-1/2 right-3'
                         />
                     </div>
 
                     {/* order button */}
                     <button
-                        onClick={() => alert("Ordering not available yet")}
-                        className='bg-gradient-to-r from-primary to-secondary transition-all duration-200
-                        text-white py-1 px-4 rounded-full flex items-center gap-3 group'
+                        onClick={() => handleOrderPopup()}
+                        className='flex items-center gap-3 px-4 py-1 text-white transition-all duration-200 rounded-full bg-gradient-to-r from-primary to-secondary group'
                     >
                         <span
-                            className='group-hover:block hidden transition-all duration-200'>
+                            className='hidden transition-all duration-200 group-hover:block'>
                         Order
                         </span>
                         <FaCartShopping 
-                            className='text-xl text-white drop-shadow-sm cursor-pointer'
+                            className='text-xl text-white cursor-pointer drop-shadow-sm'
                         />
                     </button>
 
@@ -120,14 +116,13 @@ function Navbar() {
         </div>
         {/* lower Navbar */}
         <div className='flex justify-center'>
-            <ul className='sm:flex hidden items-center gap-4'>
+            <ul className='items-center hidden gap-4 sm:flex'>
                 {
                     Menu.map((data) => (
                         <li key={data.id}>
                             <a 
                                 href={data.link}
-                                className='inline-block px-4
-                                hover:text-primary duration-200'
+                                className='inline-block px-4 duration-200 hover:text-primary'
                             >
                                 {data.name}
                             </a>
@@ -135,15 +130,13 @@ function Navbar() {
                     ))
                 }
                 {/* Simple Dropdown and Links */}
-                <li className='group relative
-                cursor-pointer'>
+                <li className='relative cursor-pointer group'>
                     <a href="#" className='flex items-center
                     gap-[2px] py-2'>
                         Trending
                         <span>
                             <FaCaretDown 
-                            className="transition-all duration-200
-                            group-hover:rotate-180" />
+                            className="transition-all duration-200 group-hover:rotate-180" />
                         </span>
                     </a>
                     <div className='absolute z-[9999] hidden
@@ -154,9 +147,7 @@ function Navbar() {
                                 <li key={data.id}>
                                     <a 
                                         href={data.link}
-                                        className='inline-block w-full
-                                        rounded-md p-2
-                                        hover:bg-primary/20'
+                                        className='inline-block w-full p-2 rounded-md hover:bg-primary/20'
                                     >
                                         {data.name}
                                     </a>
