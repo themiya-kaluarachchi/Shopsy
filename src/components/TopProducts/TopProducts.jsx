@@ -28,12 +28,12 @@ const ProductsData = [
   },
 ];
 
-const TopProducts = () => {
+const TopProducts = ({ handleOrderPopup }) => {
   return (
     <div>
       <div className='container'> 
         {/* Header section */}
-        <div className='text-left mb-24'>
+        <div className='mb-24 text-left'>
                 <p data-aos="fade-up" className='text-sm text-primary'>
                     Top Rated Products for you
                 </p>
@@ -45,7 +45,7 @@ const TopProducts = () => {
                 </p>
             </div>
         {/* Body section */}
-        <div  className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-20 md:gap-5 place-items-center'>
+        <div  className='grid grid-cols-1 gap-20 sm:grid-cols-2 md:grid-cols-3 md:gap-5 place-items-center'>
           {ProductsData.map((data) => (
             <div 
               data-aos="zoom-in"
@@ -62,19 +62,19 @@ const TopProducts = () => {
               {/* details section */}
               <div className='p-4 text-center'>
                 {/* star rating */}
-                <div className='w-full flex items-center justify-center gap-1'>
+                <div className='flex items-center justify-center w-full gap-1'>
                   <FaStar className="text-yellow-500" />
                   <FaStar className="text-yellow-500" />
                   <FaStar className="text-yellow-500" />
                   <FaStar className="text-yellow-500" />
                 </div>
                 <h1 className='text-xl font-bold'>{data.title}</h1>
-                <p className='text-gray-500 group-hover:text-white duration-300 text-sm line-clamp-2'>
+                <p className='text-sm text-gray-500 duration-300 group-hover:text-white line-clamp-2'>
                   {data.description}
                 </p>
                 <button 
-                  className='bg-primary hover:scale-105 duration-300 text-white py-1 px-4 rounded-full mt-4 group-hover:bg-white group-hover:text-primary'
-                  //onClick={handleOrderPopup}
+                  className='px-4 py-1 mt-4 text-white duration-300 rounded-full bg-primary hover:scale-105 group-hover:bg-white group-hover:text-primary'
+                  onClick={handleOrderPopup}
                 >
                   Order Now
                 </button>

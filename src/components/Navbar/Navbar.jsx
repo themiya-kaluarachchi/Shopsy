@@ -115,7 +115,7 @@ function Navbar({ handleOrderPopup }) {
             </div>
         </div>
         {/* lower Navbar */}
-        <div className='flex justify-center'>
+        <div data-aos="zoom-in" className='flex justify-center'>
             <ul className='items-center hidden gap-4 sm:flex'>
                 {
                     Menu.map((data) => (

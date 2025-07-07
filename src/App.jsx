@@ -33,10 +33,10 @@ function App() {
 
   return (
     <div className='duration-200 bg-white dark:bg-gray-900 dark:text-white'>
-        <Navbar handleOrderPopup={handleOrderPopup}/>
-        <Hero />
+        <Navbar handleOrderPopup={handleOrderPopup} />
+        <Hero handleOrderPopup={handleOrderPopup} />
         <Products />
-        <TopProducts />
+        <TopProducts handleOrderPopup={handleOrderPopup} />
         <Banner />
         <Subscribe />
         <Products />
