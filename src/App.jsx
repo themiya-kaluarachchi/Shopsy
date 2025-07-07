@@ -24,7 +24,7 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div className='duration-200 bg-white dark:bg-gray-900 dark:text-white'>
         <Navbar />
         <Hero />
         <Products />
