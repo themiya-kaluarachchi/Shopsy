@@ -54,7 +54,9 @@ const Footer = () => {
               Shopsy
             </h1>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad non autem officiis error soluta reprehenderit quo, delectus vel in numquam repellendus. Similique saepe quis maxime. Rem ab eum aliquam tenetur!
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam, ab.
+              <br />
+              Created by Themiya
             </p>
           </div>
 
